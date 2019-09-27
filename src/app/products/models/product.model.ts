@@ -1,5 +1,5 @@
 import { IProductModel } from './IProductModel';
-import { ProductCategories } from './categoriesModel'; 
+import { ProductCategories } from './categories.model';
 
 export class ProductModel implements IProductModel {
     constructor(

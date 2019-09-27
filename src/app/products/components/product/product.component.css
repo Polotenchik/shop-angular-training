@@ -1,6 +1,7 @@
 .product-card {
     display: flex;
     flex-direction: column;
+    margin: 15px;
     max-width: 400px;
     background-color: #e7e6e6;  
     border: 1px solid #1976d2;
@@ -21,7 +22,6 @@
     margin: 12px auto;
     max-width: 100px;
     font-size: 12px;
-    line-height: 20px;
     height: 30px;
     padding: 5px 15px;
 }

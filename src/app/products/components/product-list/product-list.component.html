@@ -1,0 +1,8 @@
+<div  class="product-cart">
+    <app-product 
+        *ngFor="let product of products$ | async"
+        [product]="product"
+        (buyProduct)="onBuyProduct($event)"
+    ></app-product>
+</div>
+

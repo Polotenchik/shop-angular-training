@@ -1,0 +1,13 @@
+<div class="product-card">
+    <h2>Product Card</h2>
+    <p>Name: {{ product.name }}</p>
+    <p>Description: {{ product.description }}</p>
+    <p>Price: {{ product.price }}$</p>
+    <p>Product related Items:</p>
+    <ul *ngFor="let item of product.items">
+      <li>{{ item }}</li>
+    </ul>
+  
+    <p>Category: {{ product.category }}</p>
+   <button *ngIf="product.isAvailable" (click)="onBuyProduct(product)">Buy</button>
+</div>

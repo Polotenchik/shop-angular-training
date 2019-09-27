@@ -1,0 +1,12 @@
+<div *ngIf="products.length; else emptyCart">
+    <h3>Your Cart</h3>
+    <ul>
+        <li *ngFor="let product of products">
+        {{ product.name }} - {{ product.price }}$
+        </li>
+    </ul>
+</div>
+     
+<ng-template #emptyCart>
+    <h3>Youtr Cart is empty</h3>
+</ng-template>
