@@ -1,0 +1,20 @@
+<div class="product-card">
+    <h2>Product Card</h2>
+    <p>Name: {{ name }}</p>
+    <p>Description: {{ description }}</p>
+    <p>Price: {{ price }}$</p>
+  
+    <p [ngSwitch]="isAvailable">
+      Availability:
+      <span *ngSwitchCase="true">available</span>
+      <span *ngSwitchDefault>not available</span>
+    </p>
+  
+    <p>Product Items:</p>
+    <ul *ngFor="let item of items">
+      <li>{{ item }}</li>
+    </ul>
+  
+    <p>Category: {{ category }}</p>
+    <button (click)="onBuy()">Buy</button>
+</div>
