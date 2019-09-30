@@ -8,4 +8,5 @@ export interface IProductModel {
   items: string[];
   category: ProductCategories;
 }
+// не принято именовать файлы в верхнем и нижнем регистре
 
