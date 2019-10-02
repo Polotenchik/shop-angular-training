@@ -1,8 +1,10 @@
 <div *ngIf="products.length; else emptyCart">
     <h3>Your Cart</h3>
+    <h4>Total quantity: {{ products.length }}</h4>
+    <h4>Total sum: {{ sum }}$</h4>
     <ul>
         <li *ngFor="let product of products">
-        {{ product.name }} - {{ product.price }}$
+            <app-cart-item [product]="product"></app-cart-item>
         </li>
     </ul>
 </div>
