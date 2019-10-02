@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import {Subscription} from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import { ProductModel } from '../../../products/models/product.model';
 import { CartService } from '../../services/cart.service';
@@ -14,12 +14,11 @@ export class CartComponent implements OnInit, OnDestroy {
   products: ProductModel[] = [];
   private sub: Subscription;
 
-  constructor(private cartService: CartService) {
-  }
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.sub = this.cartService.channel$.subscribe(
-      product => (this.products.push(product))
+    this.sub = this.cartService.channel$.subscribe(product => 
+      this.products.push(product)
     );
   }
 
