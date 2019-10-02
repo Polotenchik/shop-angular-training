@@ -2,8 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
-import { ProductModel } from '../../../products/models/product.model';
-import { CartService } from '../../services/cart.service';
+import {CartItemModel} from '../../models/cart-item.model';
+import {CartService} from '../../services/cart.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +12,7 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit, OnDestroy {
-  products: ProductModel[] = [];
+  products: CartItemModel[] = [];
   private sub: Subscription;
   sum = 0;
 

@@ -2,17 +2,17 @@ import {Injectable} from '@angular/core';
 
 import {Subject} from 'rxjs';
 
-import {ProductModel} from '../../products/models/product.model';
+import {CartItemModel} from '../models/cart-item.model';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CartService {
-  private channel = new Subject<ProductModel>();
+  private channel = new Subject<CartItemModel>();
   public channel$ = this.channel.asObservable();
 
-  addProduct(product: ProductModel) {
+  addProduct(product: CartItemModel) {
     this.channel.next(product);
   }
 }
