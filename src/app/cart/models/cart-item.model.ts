@@ -1,5 +1,4 @@
 import {ICartItemModel} from './icart-item.model';
-import {ProductCategories} from '../../products/models/categories.model';
 
 export class CartItemModel implements ICartItemModel {
   constructor(

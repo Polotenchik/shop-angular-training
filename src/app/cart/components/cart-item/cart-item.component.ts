@@ -9,10 +9,10 @@ import {CartItemModel} from '../../models/cart-item.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartItemComponent {
-  @Input() product: CartItemModel;
-  @Output() private removeProduct = new EventEmitter<CartItemModel>();
+  @Input() cartItem: CartItemModel;
+  @Output() private removeCartItem = new EventEmitter<CartItemModel>();
 
-  onRemoveProduct(product: CartItemModel): void {
-    this.removeProduct.emit(product);
+  onRemoveCartItem(cartItem: CartItemModel): void {
+    this.removeCartItem.emit(cartItem);
   }
 }

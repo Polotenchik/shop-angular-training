@@ -3,7 +3,7 @@ import { ProductCategories } from './categories.model';
 
 export class ProductModel implements IProductModel {
     constructor(
-      public id: string,
+      public id: number,
       public name: string,
       public description: string,
       public category: ProductCategories,

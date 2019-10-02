@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit {
   }
 
   onBuyProduct(product: ProductModel): void {
-    const {name, price} = product;
-    this.cartService.addProduct(new CartItemModel(name, price));
+    const {id, name, price} = product;
+    this.cartService.addItem(new CartItemModel(id, name, price));
   }
 }
