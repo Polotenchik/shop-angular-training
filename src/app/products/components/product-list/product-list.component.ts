@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ProductsService } from '../../services/products.service';
 import { ProductModel } from '../../models/product.model';
 import { CartService } from '../../../cart/services/cart.service';
+import {CartItemModel} from '../../../cart/models/cart-item.model';
 
 @Component({
   selector: 'app-product-list',
@@ -22,8 +23,7 @@ export class ProductListComponent implements OnInit {
   }
 
   onBuyProduct(product: ProductModel): void {
-    this.cartService.addProduct(product);
+    const {id, name, price} = product;
+    this.cartService.addItem(new CartItemModel(id, name, price));
   }
-
-
 }
