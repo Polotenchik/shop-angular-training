@@ -10,6 +10,7 @@ export class AppComponent implements AfterViewInit {
   title: ElementRef<HTMLInputElement>;
 
   ngAfterViewInit(): void {
+    // желательно использовать Renderer2
     this.title.nativeElement.innerText = 'Ng shop';
   }
 }

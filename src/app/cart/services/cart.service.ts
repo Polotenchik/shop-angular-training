@@ -32,7 +32,7 @@ export class CartService {
   }
 
   public addItem(newItem: CartItemModel): Observable<any> {
-  
+
     const existsItemIdx = this.cartItems.findIndex(item => item.id === newItem.id);
 
     if (existsItemIdx > -1) {
@@ -57,7 +57,7 @@ export class CartService {
     const idx = this.cartItems.findIndex(item => item.id === cartItem.id);
 
     if (idx > -1) {
-      let origQuantity = this.cartItems[idx].quantity;
+      let /* const */origQuantity = this.cartItems[idx].quantity;
       if (increase) {
         cartItem.quantity = origQuantity + 1;
       } else {

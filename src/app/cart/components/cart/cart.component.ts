@@ -15,6 +15,7 @@ export class CartComponent implements OnInit, OnDestroy {
   sum = 0;
   quantity = 0;
 
+  // Есть способ использовать одну подписку и ее метод add()
   private cartItemSub: Subscription;
   private sumSub: Subscription;
   private quantitySub: Subscription;
