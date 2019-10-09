@@ -57,7 +57,7 @@ export class CartService {
     const idx = this.cartItems.findIndex(item => item.id === cartItem.id);
 
     if (idx > -1) {
-      let /* const */origQuantity = this.cartItems[idx].quantity;
+      const origQuantity = this.cartItems[idx].quantity;
       if (increase) {
         cartItem.quantity = origQuantity + 1;
       } else {

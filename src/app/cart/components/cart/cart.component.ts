@@ -15,23 +15,18 @@ export class CartComponent implements OnInit, OnDestroy {
   sum = 0;
   quantity = 0;
 
-  // Есть способ использовать одну подписку и ее метод add()
-  private cartItemSub: Subscription;
-  private sumSub: Subscription;
-  private quantitySub: Subscription;
+  private subscriptions = new Subscription();
 
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.cartItemSub = this.cartService.getItems().subscribe(items => this.items = items);
-    this.sumSub = this.cartService.getSum().subscribe(sum => this.sum = sum);
-    this.quantitySub = this.cartService.getQuantity().subscribe(quantity => this.quantity = quantity);
-  }
+  this.subscriptions.add(this.cartService.getItems().subscribe(items => this.items = items));
+  this.subscriptions.add(this.cartService.getSum().subscribe(sum => this.sum = sum));
+  this.subscriptions.add(this.cartService.getQuantity().subscribe(quantity => this.quantity = quantity));
+}
 
   ngOnDestroy() {
-    this.cartItemSub.unsubscribe();
-    this.sumSub.unsubscribe();
-    this.quantitySub.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   onRemoveCartItem(cartItem: CartItemModel) {
