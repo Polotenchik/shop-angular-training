@@ -53,6 +53,12 @@ export class CartService {
     return of({success: true});
   }
 
+  public clearCart(): Observable<any> {
+    this.cartItems = [];
+    this.cartItemsSource.next(this.cartItems);
+    return of({success: true});
+  }
+
   changeQuantity(cartItem: CartItemModel, increase = true): Observable<any> {
     const idx = this.cartItems.findIndex(item => item.id === cartItem.id);
 
