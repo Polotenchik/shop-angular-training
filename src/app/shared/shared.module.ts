@@ -1,11 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ColorizeDirective } from './directives/colorize.directive';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+
+import {ColorizeDirective} from './directives/colorize.directive';
+import {SelectDirective} from './directives/select.directive';
 
 @NgModule({
-  declarations: [ColorizeDirective],
+  declarations: [
+    ColorizeDirective,
+    SelectDirective,
+  ],
   exports: [
-    ColorizeDirective
+    ColorizeDirective,
+    SelectDirective,
   ],
   imports: [
     CommonModule

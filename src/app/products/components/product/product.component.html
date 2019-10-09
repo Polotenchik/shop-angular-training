@@ -1,4 +1,4 @@
-<div class="product-card" appColorize>
+<div class="product-card" [ngClass]="{'not-available': !product.isAvailable}" appColorize appSelect="red">
     <h2>Product Card</h2>
     <p>Name: {{ product.name }}</p>
     <p>Description: {{ product.description }}</p>
@@ -9,5 +9,9 @@
     </ul>
   
     <p>Category: {{ product.category }}</p>
-   <button *ngIf="product.isAvailable" (click)="onBuyProduct(product)">Buy</button>
+    <div class="buy-controls">
+        <label for="quantity">Quantity</label>
+        <input id="quantity" type="number" [(ngModel)]="quantity">
+        <button [disabled]="!product.isAvailable" (click)="onBuyProduct(product, quantity)" class="buy-btn">Buy</button>
+      </div>
 </div>

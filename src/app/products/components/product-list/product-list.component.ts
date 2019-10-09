@@ -22,8 +22,10 @@ export class ProductListComponent implements OnInit {
     this.products$ = this.productsService.getProducts();
   }
 
-  onBuyProduct(product: ProductModel): void {
-    const {id, name, price} = product;
-    this.cartService.addItem(new CartItemModel(id, name, price));
+  onBuyProduct(evt): void {
+    const {id, name, price} = evt.product;
+    const {quantity} = evt;
+
+    this.cartService.addItem(new CartItemModel(id, name, price, quantity));
   }
 }
