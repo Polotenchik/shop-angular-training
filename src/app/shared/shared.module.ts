@@ -1,21 +1,14 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import {ColorizeDirective} from './directives/colorize.directive';
-import {SelectDirective} from './directives/select.directive';
+import { ColorizeDirective } from './directives/colorize.directive';
+import { SelectDirective } from './directives/select.directive';
 
+// Так обычно пишут
+const directives = [ColorizeDirective, SelectDirective];
 @NgModule({
-  declarations: [
-    ColorizeDirective,
-    SelectDirective,
-  ],
-  exports: [
-    ColorizeDirective,
-    SelectDirective,
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [...directives],
+  exports: [...directives],
+  imports: [CommonModule]
 })
-
-export class SharedModule { }
+export class SharedModule {}

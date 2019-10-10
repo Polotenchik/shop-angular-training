@@ -13,7 +13,7 @@ export class ConfigOptionsService {
   }
 
   setConfig(config: ConfigModel): void {
-    this.config = config;
+    this.config = config; // тут можно так this.config = {...this.config, ...config};
   }
 
   setId(id: number): void {
